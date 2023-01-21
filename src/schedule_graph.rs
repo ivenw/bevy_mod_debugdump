@@ -425,7 +425,7 @@ fn add_dependency_labels(
             .filter(|(_, node)| node.labels().contains(requirement))
         {
             found = true;
-c
+
             let me = system_node_id;
             let other = node_id(schedule_name, dependency, i);
 
