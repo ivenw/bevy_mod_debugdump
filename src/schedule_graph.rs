@@ -430,7 +430,7 @@ c
             let other = node_id(schedule_name, dependency, i);
 
             match direction {
-                SystemDirection::Before => graph.add_edge(me, &other, &[("constraint", "true)]),
+                SystemDirection::Before => graph.add_edge(me, &other, &[("constraint", "true")]),
                 SystemDirection::After => graph.add_edge(&other, me, &[("constraint", "true")]),
             }
         }
