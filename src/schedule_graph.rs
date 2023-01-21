@@ -165,7 +165,7 @@ fn build_schedule_graph(
                 &[
                     ("label", &stage_name_str),
                     ("fontsize", "20"),
-                    ("constraint", "false"),
+                    ("constraint", "true"),
                     ("rankdir", "LR"),
                     ("style", "rounded"),
                     ("bgcolor", &style.bgcolor_nested_schedule),
@@ -425,13 +425,13 @@ fn add_dependency_labels(
             .filter(|(_, node)| node.labels().contains(requirement))
         {
             found = true;
-
+c
             let me = system_node_id;
             let other = node_id(schedule_name, dependency, i);
 
             match direction {
-                SystemDirection::Before => graph.add_edge(me, &other, &[("constraint", "false")]),
-                SystemDirection::After => graph.add_edge(&other, me, &[("constraint", "false")]),
+                SystemDirection::Before => graph.add_edge(me, &other, &[("constraint", "true)]),
+                SystemDirection::After => graph.add_edge(&other, me, &[("constraint", "true")]),
             }
         }
         assert!(found);
